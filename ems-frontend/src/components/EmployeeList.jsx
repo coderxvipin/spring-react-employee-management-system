@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { deleteEmployee, listEmployees } from '../services/EmployeeService';
 import { Navigate, useNavigate } from 'react-router-dom';
 
-function ListOfEmployeesComponent (){
+function EmployeeList (){
 
   const [employees, setEmployees] = useState([])  
   const  navigator = useNavigate() //nothing but a JS function and here we are just assigning a JS function to a const variable.
@@ -86,4 +86,4 @@ function ListOfEmployeesComponent (){
     </div>
   )
 }
-export default ListOfEmployeesComponent
+export default EmployeeList

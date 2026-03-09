@@ -1,35 +1,38 @@
 //Purpose of this Component: 
 
 import './App.css'      
-import EmployeeComponent from './components/EmployeeComponent'
-import FooterComponent from './components/FooterComponent'              
-import HeaderComponent from './components/HeaderComponent'             
-import ListOfEmployeesComponent from './components/ListOfEmployeesComponent'
+import EmployeeForm from './components/EmployeeForm'
+import Footer from './components/Footer'    //path = URL path
+import Header from './components/Header'    //element = which component to render
+import EmployeeList from './components/EmployeeList'
 import {BrowserRouter, Routes, Route} from 'react-router-dom' 
                                                               
 function App() {
   return ( 
     <> 
     <BrowserRouter>
-      <HeaderComponent/>
+      <Header/>
       <div className="main-content">
         <Routes>
-            {/*Configuring route for ListOfEmployeesComponent */}
-            {/*http://localhost:3000 */}  
-            <Route path='/' element = {<ListOfEmployeesComponent/>}> </Route> 
+            {/*Configuring route for EmployeeList */}
+            {/*http://localhost:3000 [Means homepage]*/}  
+            <Route path='/' element = {<EmployeeList/>}> </Route> 
+
+            {/*When navigated to employees */}
+            <Route path='/employees' element = {<EmployeeList/>}> </Route> 
 
             {/*http://localhost:3000/employees */}
-            <Route path='/employee-list' element = {<ListOfEmployeesComponent/>}> </Route>
+            <Route path='/employee-list' element = {<EmployeeList/>}> </Route>
 
             {/*http://localhost:3000/add-employee */}
-            <Route path='/add-employee' element = {<EmployeeComponent/>}></Route>
+            <Route path='/add-employee' element = {<EmployeeForm/>}></Route>
 
             {/*http://localhost:3000/edit-employee/1 */}
-            <Route path='/edit-employee/:id' element={<EmployeeComponent/>}></Route> 
+            <Route path='/edit-employee/:id' element={<EmployeeForm/>}></Route> 
                  
         </Routes>
       </div>
-      <FooterComponent/>
+      <Footer/>
     </BrowserRouter>
     </>
   )
