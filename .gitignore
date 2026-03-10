@@ -4,7 +4,6 @@ ems-frontend/build/
 ems-frontend/.env
 
 # Ignore Spring Boot build files and IDE settings
-#ems-backend/target/
 ems-backend/.idea/
 ems-backend/*.class
 
